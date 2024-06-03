@@ -4,40 +4,39 @@ $(document).ready(function() {
 
     $('#btn-buscar-cep').click(function() {
         const cep = $('#cep').val().replace('-', ''); // Remove caracteres da máscara antes de enviar
-        const endpoint = `https://viacep.com.br/ws/${cep}/json/`;
+        const endpoint = `https://viacep.com.br/ws/${cep}/json`;
         const botao = $(this);
 
         $(botao).find('i').addClass('d-none');
         $(botao).find('span').removeClass('d-none');
 
-        $.ajax({
-            url: endpoint,
-            type: 'GET',
-            success: function(resposta) {
-                if (resposta.erro) {
-                    alert("CEP não encontrado");
-                    resetButton();
-                    return;
-                }
+        fetch(endpoint)
+        
+        .then(function(resposta) {
+            return resposta.json()
+        })
 
-                const logradouro = resposta.logradouro;
-                const bairro = resposta.bairro;
-                const cidade = resposta.localidade;
-                const estado = resposta.uf;
+            .then(function(json) {
+                const logradouro = json.logradouro;
+                const bairro = json.bairro;
+                const cidade = json.localidade;
+                const estado = json.uf;
                 const endereco = `${logradouro}, ${bairro} - ${cidade} - ${estado}`;
-
+                
                 $('#endereco').val(endereco);
-                resetButton();
-            },
-            error: function() {
-                alert("Erro ao buscar CEP");
-                resetButton();
-            }
-        });
+            })
 
-        function resetButton() {
-            $(botao).find('i').removeClass('d-none');
-            $(botao).find('span').addClass('d-none');
-        }
+            .catch(function(erro) {
+                alert("Ocorreu um erro ao buscar o endereço, tente novamente main tarde!")
+            })
+
+            .finally(function() {
+                resetButton();
+            })
+
+            function resetButton() {
+                $(botao).find('i').removeClass('d-none');
+                $(botao).find('span').addClass('d-none');
+            }
     });
 });
