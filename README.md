@@ -4,7 +4,11 @@
 
 ## Features 🌟
 
-- **Data verification**: Add personal information in order to submit an order, and if there is an error or omission, return the error to the user
+**Basic Data Form**: Users can enter their first name, last name, and email address.
+
+**CEP Search**: Upon entering a valid CEP (postal code), the system automatically retrieves the corresponding address using the ViaCEP public API.
+
+**Field Validation**: The form fields are validated to ensure that mandatory data is entered before submission.
 
 ## Technologies Used 📚
 
