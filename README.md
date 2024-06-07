@@ -17,6 +17,7 @@
   <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
   <img src="https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
   <img src="https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white" alt="Angular">
+  <img src="https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
 </p>
 
 #### What I learned in this project:
@@ -25,7 +26,7 @@
 
 ## How to Use  ✏️
 
-To enter the agenda and add, view, or remove a contact, you don't need to install anything. Simply clone or download the project to your computer and open the `index.html` file in a browser of your choice.
+To enter the agenda and add, view, or remove a contact, you don't need to install anything. Simply clone or download the project to your computer and open the `frete.html` file in a browser of your choice.
 
 ### Steps to Run
 
