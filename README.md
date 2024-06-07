@@ -21,7 +21,7 @@
 </p>
 
 #### What I learned in this project:
-- make AJAX requests with Fetch API and XMLHttpRequest
+- make AJAX requests with Fetch API
 - create and handle exceptions
 
 ## How to Use  ✏️
